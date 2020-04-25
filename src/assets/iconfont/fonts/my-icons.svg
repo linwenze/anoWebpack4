@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <font id="my-icons" horiz-adv-x="1000">
+    <font-face font-family="my-icons"
+      units-per-em="1000" ascent="1000"
+      descent="0" />
+    <missing-glyph horiz-adv-x="0" />
+    <glyph glyph-name="view"
+      unicode="&#xEA01;"
+      horiz-adv-x="1000" d="M500 406.25A93.75 93.75 0 1 0 500 593.75A93.75 93.75 0 0 0 500 406.25M500 656.25C413.84375 656.25 343.75 586.15625 343.75 500S413.84375 343.75 500 343.75S656.25 413.84375 656.25 500S586.15625 656.25 500 656.25M500 218.75C292.90625 218.75 125 468.75 125 500S292.90625 781.25 500 781.25S875 531.25 875 500S707.09375 218.75 500 218.75M500 843.75C259.03125 843.75 62.5 567.375 62.5 500C62.5 432.625 259.03125 156.25 500 156.25S937.5 432.625 937.5 500C937.5 567.375 740.96875 843.75 500 843.75" />
+  </font>
+</defs>
+</svg>

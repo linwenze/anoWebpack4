@@ -47,14 +47,7 @@ module.exports = {
           'css-loader'
         ],
       },
-      {
-        test: /\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ],
-      },
+      
       {
         test: /\.sass$/,
         use: [
@@ -62,7 +55,15 @@ module.exports = {
           'css-loader',
           'sass-loader?indentedSyntax'
         ],
-      },      
+      }, 
+      {
+        test: /\.s[a|c]ss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ],
+        },     
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -93,7 +94,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.(ttf|woff|png|jpg|jpeg|gif|svg)$/,
+        test: /\.(ttf|woff|woff2|eot|png|jpg|jpeg|gif|svg)$/,
         use: [{
           loader: 'url-loader',
           options: {
@@ -132,7 +133,8 @@ module.exports = {
   }
   // devtool: '#eval-source-map'
 }
-
+var dir = 'src/assets/iconfont'
+var WebpackIconfontPluginNodejs = require('webpack-iconfont-plugin-nodejs');
 if (process.env.NODE_ENV === 'production') {
   //module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
@@ -150,7 +152,18 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
-    })
+    }),
+    new WebpackIconfontPluginNodejs({
+      fontName: 'my-icons',
+      cssPrefix: 'ico',
+      svgs: path.join(dir, 'svgs/*.svg'),
+      // template: path.join(dir, 'css.njk'), 
+      fontsOutput: path.join(dir, 'fonts/'),
+      cssOutput: path.join(dir, 'fonts/font.css'),
+      htmlOutput: path.join(dir, 'fonts/_font-preview.html'),
+      jsOutput: path.join(dir, 'fonts/fonts.js'),
+      // formats: ['ttf', 'woff', 'svg'],
+    }),
   ])
 }else{
   module.exports.plugins = (module.exports.plugins || []).concat([
@@ -159,5 +172,16 @@ if (process.env.NODE_ENV === 'production') {
         APIDEV:JSON.stringify(process.env.APIDEV)
       }
     }),
+      new WebpackIconfontPluginNodejs({
+        fontName: 'my-icons',
+        cssPrefix: 'ico',
+        svgs: path.join(dir, 'svgs/*.svg'),
+        // template: path.join(dir, 'css.njk'), 
+        fontsOutput: path.join(dir, 'fonts/'),
+        cssOutput: path.join(dir, 'fonts/font.css'),
+        htmlOutput: path.join(dir, 'fonts/_font-preview.html'),
+        jsOutput: path.join(dir, 'fonts/fonts.js'),
+        // formats: ['ttf', 'woff', 'svg'],
+      }),
   ])
 }

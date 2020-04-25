@@ -1,6 +1,8 @@
 <template>
-    <div>
-        这是首页
+    <div >
+        这是首页<i class="ico-view">dfdf</i>
+        <el-button type="primary">主要按钮</el-button>
+        <div class="test">ffdfdf</div>
     </div>
 </template>
 <script>
@@ -32,6 +34,10 @@
     }
 </script>
 
-<style scoped>
-    
+<style scoped lang="scss">
+@import "element-variables";
+.test{
+    color:#fff;
+    background: $--color-primary;
+}
 </style>

@@ -1,0 +1,23 @@
+@font-face {
+    font-family: my-icons;
+    src: url("my-icons.eot");src: url("my-icons.eot?28436e55#iefix") format("embedded-opentype"),
+             url("my-icons.woff2?28436e55") format("woff2"),
+             url("my-icons.woff?28436e55") format("woff"),
+             url("my-icons.ttf?28436e55") format("truetype"),
+             url("my-icons.svg?28436e55#my-icons") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="ico"], [class*=" ico"] {
+    font-family: 'my-icons' !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+}
+
+
+.ico-view::before {
+    content: "\ea01";
+}
+
