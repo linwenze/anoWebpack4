@@ -1,6 +1,7 @@
 window.ENV =require('./env.js')
 // console.log(baseUrl)
 window.stores = {};
+
 window.axios = require('axios');
 
 var Decorator = {
@@ -119,7 +120,9 @@ var Decorator = {
         }    
     },
     model(target) {
+       
         function resetFunc(params, funcName) {
+           
             var currentAttrFunc = target.prototype[funcName];
             target.prototype[funcName] = function(request) {
      var url = "";
@@ -128,9 +131,30 @@ var Decorator = {
                 } else {
                     url = params.url;
                 }
+                console.log(request)
                 var response = axios[params.type ? params.type : "get"](ENV.baseUrl + url, params.type == 'get' ? {                    params: request
                 } : request);
-                console.log(process.env)
+                // var response= axios({
+                //     method: params.type ? params.type:'get',
+                //     url: ENV.baseUrl + url,
+                //     data:params.type == 'get' ? {params: request} : request,
+                //     headers: {
+                //       "Content-Type": "application/json;charset=UTF-8",
+                //       "X-Requested-With": "XMLHttpRequest",
+                //       "Authorization": 'Bearer bfas9kqj539r36o5cudgbbe8n1'
+                //     },
+                //     withCredentials: true,
+                //   })
+                //   response.catch((error, res) => {
+                //     console.log(error)
+                //     if (error.response && error.response.data.code == 401) {
+                //       window.location.href = "/#/login"
+                //     }else{
+                //         // console.log(stores)
+                //         // stores.dispatch("error","只支持jpg/png/jpeg/bmp格式");
+                //     }
+                //   });
+               
                 return currentAttrFunc(param, response);
             }
         }

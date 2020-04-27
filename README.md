@@ -44,8 +44,12 @@ npm run build-prod //生产环境
 - 生产环境打包生成后放在根文件下的prod文件夹
 ###4、自动用svg生成iconfont字体图标，支持webpack热重载
 - 开发时在src/assets/iconfont/svgs目录下，修改或添加、删除svg文件，可自动生成字体图标（支持ttf,woff2,woff,eot,svg）及配套的css样式、html预览；同时热重载立即可以看到效果。
-#### webpack添加
 
+####安装插件
+```
+npm install webpack-iconfont-plugin-nodejs --save
+```
+#### webpack添加
 ```javascript
 var dir = 'src/assets/iconfont'
 var WebpackIconfontPluginNodejs = require('webpack-iconfont-plugin-nodejs');

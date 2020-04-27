@@ -1,8 +1,7 @@
 <template>
     <div >
         这是首页<i class="ico-view">dfdf</i>
-        <el-button type="primary">主要按钮</el-button>
-        <div class="test">ffdfdf</div>
+        <el-button type="primary">主要按钮{{$store.state.indexStore.sex}}</el-button>
     </div>
 </template>
 <script>
@@ -10,7 +9,7 @@
     import BaseComponent from '@common/components/BaseComponent'
     import indexStore from './store'
     @component
-    @store(indexStore)
+    @store("indexStore", indexStore)
     export default class index  extends BaseComponent {
         constructor() {
             super();
@@ -21,6 +20,8 @@
             }
         }
         created() {
+            console.log(this.$store)
+        	// this.$store.commit("openLoading");
             
         }
         mounted() {

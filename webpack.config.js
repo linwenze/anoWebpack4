@@ -18,7 +18,7 @@ switch (process.env.APIDEV) {
     APIDEV='./dev'
   break
   case 'test':
-    APIDEV='./test'
+    APIDEV='./dist'
   break
   case 'demo':
     APIDEV='./demo'
@@ -109,6 +109,7 @@ module.exports = {
   },
   resolve: {
     alias: {
+      '@': path.resolve('src'),  
       'vue$': 'vue/dist/vue.esm.js',
       '@assets': path.resolve(__dirname, 'src', 'assets'),
       '@common': path.resolve(__dirname, 'src', 'common'),
