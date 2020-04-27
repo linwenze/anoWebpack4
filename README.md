@@ -94,8 +94,6 @@ import '@assets/iconfont/fonts/font.css'
 css按需加载的来源直接指向element-ui的scss文件，而不是预编译的css文件。通过join-file-content-plugin插件在编译时将src/assets/css/element-theme/theme-changed.scss文件 附加到element-ui主题变量文件element-theme-chalk/src/common/var.scss之前，实现了在修改scss变量后即可立马查看效果，无需预先编译element-ui的scss文件为css文件。同时可以在项目任意地方引用element-ui的scss变量。
 #### vue+ElementUI改变主题色
 
-- 进入项目文件夹 cd element-demo
-
 - 安装主题生成工具npm i element-theme -g
 
 - 安装白垩主题（不可以省略）npm i element-theme-chalk -D
